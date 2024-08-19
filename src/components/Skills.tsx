@@ -12,7 +12,7 @@ const Skills: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://portfolio-backend-res0.onrender.com/data/skills").then((res) => {
+        axios.get("https://api.kishorramanan.com/data/skills").then((res) => {
             setSkills(res.data);
             setLoading(false);
         }).catch((err: any) => {
@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
         })
     }, [])
 
-    if (loading){
+    if (loading) {
         return <Loader />
     }
     return (

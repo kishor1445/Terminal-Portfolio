@@ -23,14 +23,14 @@ const AboutMe: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://portfolio-backend-res0.onrender.com/data/about_me").then((res) => {
+        axios.get("https://api.kishorramanan.com/data/about_me").then((res) => {
             setAboutMe(res.data)
             setLoading(false);
         }).catch((err: any) => {
             console.log(err)
         })
     }, [])
-    if (loading){
+    if (loading) {
         return <Loader />
     }
     return (
@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
             <br />
             {AboutMe?.description}
         </p>
-        
+
     )
 }
 
